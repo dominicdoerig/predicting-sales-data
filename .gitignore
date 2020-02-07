@@ -1,2 +1,6 @@
+# Main
 .idea
 venv/*
+
+# Warm Up
+warm-up/data/*.csv
