@@ -11,5 +11,3 @@ We will perform some data exploration on highly related datasets (the dataset of
 
 - Download the data either manually using aforementioned link or using the Kaggle API (Command: kaggle competitions download -c walmart-recruiting-store-sales-forecasting)
 
-## Dataset Description
-- Dataset
