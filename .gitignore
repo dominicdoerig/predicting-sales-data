@@ -3,8 +3,8 @@
 venv/*
 
 # Warm Up
-warm-up/data/*.csv
-warm-up/data_preprocessed/*.csv
+warm-up/data/input/*.csv
+warm-up/data/preprocessed/*.csv
 warm-up/.ipynb_checkpoints/
 
 
