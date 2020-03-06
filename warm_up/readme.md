@@ -7,7 +7,7 @@ We will perform some data exploration on highly related datasets (the dataset of
 ## Dataset
 - 'Walmart Recruiting - Store Sales Forecasting' available on https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data
 
-- The dataset is not in the repository. It must be downloaded manually, unzipped and placed in warm-up/data/ .
+- The dataset is not in the repository. It must be downloaded manually, unzipped and placed in warm-up/data/input/ .
 
 - Download the data either manually using aforementioned link or using the Kaggle API (Command: kaggle competitions download -c walmart-recruiting-store-sales-forecasting)
 
