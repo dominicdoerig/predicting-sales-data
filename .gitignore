@@ -6,3 +6,11 @@ venv/*
 warm-up/data/*.csv
 warm-up/data_preprocessed/*.csv
 warm-up/.ipynb_checkpoints/
+
+
+
+
+# M5-Challenge
+m5_challenge/data/input/*.csv
+m5_challenge/data/preprocessed/*.csv
+m5_challenge/.ipynb_checkpoints/
