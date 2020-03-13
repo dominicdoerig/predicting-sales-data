@@ -29,3 +29,35 @@ def import_m5_data():
     return df_calendar, df_sales, df_prices
     
     
+    
+def plot_forecasts(df_hist, df_pred, title=None, figsize=(15, 3)):
+    """
+    Plot the historical time series and its point forecasts.
+    
+    :param df_hist: Dataframe with the historical 'sale' and their 'date'
+    :type df_hist: Pandas.DataFrame
+    :param df_pred: Dataframe with the predicted 'sale' and their 'date'
+    :type df_pred: Pandas.DataFrame
+    :param title: Title of the plot
+    :type title: str
+    :param figsize: (width, height) in inches
+    :type figsize: tuple
+    :return: None
+    :rtype: None
+    """
+
+    df_combined = pd.concat([df_hist, df_pred])
+
+    ax = df_combined.plot(x='date', y='sale',
+                          figsize=figsize, color='orange', legend=False)
+    df_hist.plot(x='date', y='sale', ax=ax, legend=False, title=title)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
