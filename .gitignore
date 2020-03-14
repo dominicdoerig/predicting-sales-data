@@ -15,3 +15,4 @@ m5_challenge/data/input/*.csv
 m5_challenge/data/preprocessed/*.csv
 m5_challenge/.ipynb_checkpoints/
 m5_challenge/tmp/*
+m5_challenge/__pycache__/
