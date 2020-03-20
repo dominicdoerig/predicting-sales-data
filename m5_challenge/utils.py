@@ -5,7 +5,8 @@ import numpy as np
 
 def get_m5_root_dir():
     """Returns project root folder."""
-    return os.getcwd()
+    return os.path.dirname(os.path.realpath(__file__))
+
 
 
 def transform_dataframe(df_sales, df_calendar, df_prices, save_to_path=None):
