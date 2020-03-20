@@ -17,3 +17,4 @@ m5_challenge/data/submissions/*.csv
 m5_challenge/.ipynb_checkpoints/
 m5_challenge/tmp/*
 m5_challenge/__pycache__/
+m5_challenge/multithreading/__pycache__/
