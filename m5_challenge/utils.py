@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import numpy as np
+from sklearn.preprocessing import LabelEncoder
 
 
 def get_m5_root_dir():
@@ -95,4 +96,15 @@ def reduce_mem_usage(df, verbose=True):
                 end_mem, 100 * (start_mem - end_mem) / start_mem
             )
         )
+    return df
+    
+    
+def encode_categorical(df, cols, fillna=True, downcast_cols = True):
+    for col in cols:
+        encoder = LabelEncoder()
+        df[col] = encoder.fit_transform(
+            df[col].fillna("MISSING") if fillna else df[col])
+        
+    if downcast_cols:
+        df = reduce_mem_usage(df)
     return df
