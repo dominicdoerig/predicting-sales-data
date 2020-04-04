@@ -27,6 +27,7 @@ ipython-genutils==0.2.0
 ipywidgets==7.5.1
 jedi==0.16.0
 Jinja2==2.11.1
+joblib==0.14.1
 jsonschema==3.2.0
 jupyter==1.0.0
 jupyter-client==5.3.4
@@ -48,7 +49,7 @@ nbconvert==5.6.1
 nbformat==5.0.4
 nbsphinx==0.5.1
 notebook==6.0.3
-numpy==1.18.1
+numpy==1.18.2
 packaging==20.3
 pandas==1.0.2
 pandocfilters==1.4.2
@@ -77,11 +78,13 @@ pyzmq==18.1.1
 qtconsole==4.6.0
 requests==2.22.0
 retrying==1.3.3
+scikit-learn==0.21.3
 scipy==1.4.1
 seaborn==0.10.0
 Send2Trash==1.5.0
 setuptools-git==1.2
 six==1.14.0
+sklearn==0.0
 snowballstemmer==2.0.0
 Sphinx==2.4.4
 sphinxcontrib-applehelp==1.0.2
