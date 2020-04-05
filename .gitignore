@@ -2,6 +2,11 @@
 .idea
 venv/*
 
+
+# Geep .gitkeep files
+!*/.gitkeep
+
+
 # Warm Up
 warm_up/data/input/*.csv
 warm_up/data/preprocessed/*.csv
@@ -11,10 +16,10 @@ warm_up/.ipynb_checkpoints/
 
 
 # M5-Challenge
-m5_challenge/data/input/*.csv
-m5_challenge/data/preprocessed/*.csv
-m5_challenge/data/submissions/*.csv
-m5_challenge/.ipynb_checkpoints/
+m5_challenge/data/input/
+m5_challenge/data/preprocessed/
+m5_challenge/data/submissions/
 m5_challenge/tmp/*
+m5_challenge/.ipynb_checkpoints/
 m5_challenge/__pycache__/
 m5_challenge/multithreading/__pycache__/
