@@ -2,9 +2,9 @@
 .idea
 venv/*
 
-
 # Geep .gitkeep files
 !*/.gitkeep
+
 
 
 # Warm Up
@@ -20,7 +20,10 @@ m5_challenge/data/input/
 m5_challenge/data/preprocessed/
 m5_challenge/data/submissions/
 m5_challenge/data/feature_engineering/
+m5_challenge/models/*.txt
 m5_challenge/tmp/*
 m5_challenge/.ipynb_checkpoints/
 m5_challenge/__pycache__/
 m5_challenge/multithreading/__pycache__/
+
+
