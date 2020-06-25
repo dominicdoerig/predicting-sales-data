@@ -50,23 +50,30 @@ def plot_forecasts(df_hist, df_pred, title=None, figsize=(15, 3)):
     df_hist.plot(x='date', y='sale', ax=ax, legend=False, title=title)
 
 
-def import_m5_data(reduce_memory=False):
+def import_m5_data(reduce_memory=False, sales_type='validation'):
     """
     Imports the input data for the M5-Challenge
 
     :param reduce_memory: bool
     :type reduce_memory: whether or not the memory usage of the dataframe should be reduced (default: False)
+    :param sales_type: 'validation' or 'evaluation': Whether the data of the M5 evaluation of validation phase should be taken
+    :type sales_type: str
     :return: Three dataframes: calendar, sales and price data
     :rtype: pandas.DataFrame
     """
     root_dir = get_m5_root_dir()
+    
+    if sales_type not in ['validation', 'evaluation']:
+        raise AttributeError('sales_type not in [validation, evaluation]')
+    
+    
     if reduce_memory is True:
         df_calendar = pd.read_csv(root_dir + '/data/input/calendar.csv').pipe(reduce_mem_usage)
-        df_sales = pd.read_csv(root_dir + '/data/input/sales_train_validation.csv').pipe(reduce_mem_usage)
+        df_sales = pd.read_csv(root_dir + f'/data/input/sales_train_{sales_type}.csv').pipe(reduce_mem_usage)
         df_prices = pd.read_csv(root_dir + '/data/input/sell_prices.csv').pipe(reduce_mem_usage)
     else:
         df_calendar = pd.read_csv(root_dir + '/data/input/calendar.csv')
-        df_sales = pd.read_csv(root_dir + '/data/input/sales_train_validation.csv')
+        df_sales = pd.read_csv(root_dir + f'/data/input/sales_train_{sales_type}.csv')
         df_prices = pd.read_csv(root_dir + '/data/input/sell_prices.csv')
 
     return df_calendar, df_sales, df_prices
