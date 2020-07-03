@@ -13,12 +13,10 @@ from m5_challenge import utils
 
 def create_prophet_df(pd_series):
     """
-    Transform the historical sales series into a dataframe of the structure Prophet requires
+    Brings a pandas.Series into the form required by Prophet
 
-    :param pd_series: Historical Sales
-    :type pd_series: Pandas Series
-    :return: Dataframe with columns ds and y as required by Prophet
-    :rtype: Pandas DataFrame
+    :param pd_series: pandas.Series to be transformed.
+    :return: transformed pandas.Dataframe
     """
     d_string = [f'd_{di}' for di in list(range(1, 1914))]
     ds = pd.date_range(start='2011-01-29', end='2016-04-24')

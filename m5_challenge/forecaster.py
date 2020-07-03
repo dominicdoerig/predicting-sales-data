@@ -5,10 +5,8 @@ def run_prophet(df_prophet):
     """
     Forecast next 28 days using Facebook's Prophet
 
-    :param df_prophet: Dataframe with columns ds and y as required by Prophet
-    :type df_prophet: Pandas Dataframe
-    :return:
-    :rtype:
+    :param df_prophet: pandas.DataFrame with columns ds and y as required by Prophet
+    :return: list containing the forecasts
     """
     model = Prophet(daily_seasonality=True, yearly_seasonality=True)
     model.fit(df_prophet)
