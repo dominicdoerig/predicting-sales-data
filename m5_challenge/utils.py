@@ -9,7 +9,6 @@ def get_m5_root_dir():
     return os.path.dirname(os.path.realpath(__file__))
 
 
-
 def transform_dataframe(df_sales, df_calendar, df_prices, save_to_path=None):
     """
     Transforms the sales dataframe and merges it with calendar and price data.
@@ -62,11 +61,10 @@ def import_m5_data(reduce_memory=False, sales_type='validation'):
     :rtype: pandas.DataFrame
     """
     root_dir = get_m5_root_dir()
-    
+
     if sales_type not in ['validation', 'evaluation']:
         raise AttributeError('sales_type not in [validation, evaluation]')
-    
-    
+
     if reduce_memory is True:
         df_calendar = pd.read_csv(root_dir + '/data/input/calendar.csv').pipe(reduce_mem_usage)
         df_sales = pd.read_csv(root_dir + f'/data/input/sales_train_{sales_type}.csv').pipe(reduce_mem_usage)
@@ -81,20 +79,24 @@ def import_m5_data(reduce_memory=False, sales_type='validation'):
 
 def reduce_mem_usage(df, verbose=True):
     """
-    Reduces the required memory of a pandas.Dataframe by reducing the storage capacity of numerical data types
+    Reduce the required memory of a dataframe by downcasting numerical data types
 
+    :param df: pandas.DataFrame to be converted
+    :param verbose: boolean whether of not the compression rate should be printed (default: True)
+    :return: pandas.DataFrame with downcasted data types
     """
+
     start_mem = df.memory_usage().sum() / 1024 ** 2
 
-    #getting columns names with int and float dtypes
+    # getting columns names with int and float dtypes
     float_cols = df.select_dtypes(include=['float']).columns
     int_cols = df.select_dtypes(include=['integer']).columns
 
-    #donwcasting the values
+    # donwcasting the values
     for col in float_cols:
-        df[col] = pd.to_numeric(df[col],downcast='float')
+        df[col] = pd.to_numeric(df[col], downcast='float')
     for col in int_cols:
-        df[col] = pd.to_numeric(df[col],downcast='integer')
+        df[col] = pd.to_numeric(df[col], downcast='integer')
 
     end_mem = df.memory_usage().sum() / 1024 ** 2
     if verbose:
@@ -104,14 +106,14 @@ def reduce_mem_usage(df, verbose=True):
             )
         )
     return df
-    
-    
-def encode_categorical(df, cols, fillna=True, downcast_cols = True):
+
+
+def encode_categorical(df, cols, fillna=True, downcast_cols=True):
     for col in cols:
         encoder = LabelEncoder()
         df[col] = encoder.fit_transform(
             df[col].fillna("MISSING") if fillna else df[col])
-        
+
     if downcast_cols:
         df = reduce_mem_usage(df)
     return df
