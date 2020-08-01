@@ -23,7 +23,7 @@ see https://github.com/dominicdoerig/predicting-sales-data/blob/master/README.md
 
 
 ## Data
-The data is not in the repo. First, download the data either from https://www.kaggle.com/c/ m5-forecasting-accuracy/data or using the Kaggle API and the command ’kaggle competitions download -c m5-forecastingaccuracy’
+The data is not in the repo. First, download the data either from https://www.kaggle.com/c/m5-forecasting-accuracy/data or using the Kaggle API and the command ’kaggle competitions download -c m5-forecastingaccuracy’
 Store unzipped input data in path m5_challenge/data/input/
 
 
