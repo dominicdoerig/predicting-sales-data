@@ -14,17 +14,6 @@ The implemented model outperforms all implement benchmarks and I overall achieve
 - The packages reported in requirements.txt are used
 - To install all packages, run 'pip install -r requirements.txt'
 
-## Data
-- The data is not in the repo. First, download the data either from https://www.kaggle.com/c/
-m5-forecasting-accuracy/data or using the Kaggle API and the command ’kaggle competitions download -c m5-forecastingaccuracy’
-- Store unzipped input data in path m5_challenge/data/input/ 
-
-## Pipeline to Run Experiments
-1. store unzipped input data in path m5_challenge/data/input/ 
-2. run 02_preprocess_data.ipynb
-3. run 06_gbm_feature_engineering.ipynb
-4. run 06_gbm_forecasting.ipynb
-
 ## Repo Structure
 - warm_up: Folder related to a preparatory project executed before the launch of the M5 challenge 
 - m5_challenge: Folder containing all files related to the M5 competition
