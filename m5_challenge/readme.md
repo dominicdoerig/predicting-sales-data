@@ -28,8 +28,8 @@ Store unzipped input data in path m5_challenge/data/input/
 
 
 ## Pipeline to Run Experiments
-store unzipped input data in path m5_challenge/data/input/
-run 02_preprocess_data.ipynb
-run 06_gbm_feature_engineering.ipynb
-run 06_gbm_forecasting.ipynb
+1) store unzipped input data in path m5_challenge/data/input/
+2) run 02_preprocess_data.ipynb
+3) run 06_gbm_feature_engineering.ipynb
+4) run 06_gbm_forecasting.ipynb
 
