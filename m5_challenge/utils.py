@@ -117,3 +117,17 @@ def encode_categorical(df, cols, fillna=True, downcast_cols=True):
     if downcast_cols:
         df = reduce_mem_usage(df)
     return df
+
+
+def encode_categorical(df, cols):
+    """
+    Encode categorical labels with value between 0 and n_classes-1 using LabelEncoder from Sklearn
+
+    :param df: pandas.DataFrame to be tranformed
+    :param cols: List of columns to be encoded
+    :return: pandas.DataFrame with encoded labels
+    """
+    for col in cols:
+        encoder = LabelEncoder()
+        df[col] = encoder.fit_transform()
+    return df
