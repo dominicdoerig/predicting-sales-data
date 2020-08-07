@@ -2,18 +2,19 @@
 .idea
 venv/*
 
-# Geep .gitkeep files
+# File Endings
+*.png
+*.eps
+*.pkl
+
+# Allow .gitkeep files
 !*/.gitkeep
-
-
 
 # Warm Up
 warm_up/data/input/*.csv
 warm_up/data/preprocessed/*.csv
-warm_up/.ipynb_checkpoints/
-
-
-
+warm_up/__pycache__/*
+warm_up/.ipynb_checkpoints/*
 
 # M5-Challenge
 m5_challenge/data/input/
@@ -22,8 +23,8 @@ m5_challenge/data/submissions/
 m5_challenge/data/feature_engineering/
 m5_challenge/models/*.txt
 m5_challenge/tmp/*
-m5_challenge/.ipynb_checkpoints/
-m5_challenge/__pycache__/
-m5_challenge/multithreading/__pycache__/
-
-
+m5_challenge/__pycache__/*
+m5_challenge/.ipynb_checkpoints/*
+m5_challenge/benchmarks/.ipynb_checkpoints/*
+m5_challenge/benchmarks/multithreading/__pycache__/*
+m5_challenge/competitive_model/.ipynb_checkpoints/*

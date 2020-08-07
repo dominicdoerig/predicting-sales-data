@@ -109,6 +109,13 @@ def reduce_mem_usage(df, verbose=True):
 
 
 def encode_categorical(df, cols, fillna=True, downcast_cols=True):
+    """
+    Encode categorical labels with value between 0 and n_classes-1 using LabelEncoder from Sklearn
+
+    :param df: pandas.DataFrame to be tranformed
+    :param cols: List of columns to be encoded
+    :return: pandas.DataFrame with encoded labels
+    """
     for col in cols:
         encoder = LabelEncoder()
         df[col] = encoder.fit_transform(
@@ -119,15 +126,3 @@ def encode_categorical(df, cols, fillna=True, downcast_cols=True):
     return df
 
 
-def encode_categorical(df, cols):
-    """
-    Encode categorical labels with value between 0 and n_classes-1 using LabelEncoder from Sklearn
-
-    :param df: pandas.DataFrame to be tranformed
-    :param cols: List of columns to be encoded
-    :return: pandas.DataFrame with encoded labels
-    """
-    for col in cols:
-        encoder = LabelEncoder()
-        df[col] = encoder.fit_transform()
-    return df
